@@ -39,18 +39,42 @@ uses
 
 type
 
-  { TfpSocketSSLStructure }
+  //Foreword decleration ...
+  TfpSocketStructure    = class;
+  TfpSocketSSLStructure = class;
 
-  TfpSocketSSLStructure = class abstract
+  TConnectionState = (csConnecting, csConnected, csDisconnecting,
+                      csDisconnected, csStateless, csTimeout, csError,
+                      csUnknown);
 
-  end;
+  TBasicSocketEvent           = procedure(Sender       : TfpSocketStructure)    of object;
+  TBasicSocketConnectionEvent = procedure(Sender       : TfpSocketStructure;
+                                          State        : TConnectionState
+  TBasicSocketErrorEvent      = procedure(Sender       : TfpSocketStructure;
+                                          ErrorCode    : Integer;
+                                          ErrorMessage : String)                of object;
+
 
   { TfpSocketStructure }
 
-  TfpSocketStructure = class abstract
-  public
+  TfpSocketStructure = class abstract(TObject)
+  protected
 
+  public
+    Data : Pointer;
+
+    constructor Create;                                                         virtual abstract;
+    destructor  Destroy;                                                        override abstract;
   published
+    property OnConnecting :
+    property OnRead       : TBasicSocketEvent;
+    property OnWrite      : TBasicSocketEvent;
+
+  end;
+
+  { TfpSocketSSLStructure }
+
+  TfpSocketSSLStructure = class abstract(TObject)
 
   end;
 
