@@ -29,6 +29,55 @@ The unit does not implement any socket connection,  and for that any socket conn
 The following unit contain a single API for socket handling for the whole fpVoIP library, so there is only one API to take care of.
 
 The unit does not implement any socket connection,  and for that any socket connection library should be implemented in the "driver" sub directory, based on the socket library, and inheriting from the classes at this unit.</descr>
+      <topic name="TBasicSocketEvent">
+        <short>Default event type for sockets</short>
+        <descr>
+          <var>Sender</var> - The Socket class that triggered the event</descr>
+      </topic>
+      <topic name="TBasicSocketErrorEvent">
+        <short>Default error event for sockets</short>
+        <descr>
+          <var>Sender</var> - The socket that triggered the event
+<var>ErrorCode</var> - The socket error code that was triggered (System or library code depends on the driver).
+<var>ErrorMessage</var> - The error message that was trigered (System or library code depends on the driver).</descr>
+      </topic>
+      <topic name="TConnectionState">
+        <short>Connection State for the socket</short>
+        <descr>The followng enumeration show in what state the socket is at:
+
+* <var>csConnecting</var> - Trying to connect
+* <var>csConnected</var> - Connected
+* <var>csDisconnecting</var> - Trying to disconnect
+* <var>csDisconnected</var> - Disconnected
+* <var>csStateless</var> - Statless socket (for UDP)
+* <var>csTimeout</var> - Timeout for connection
+* <var>csError</var> - Error that was raised on connection
+* <var>csUnknown</var> - Unknown state</descr>
+      </topic>
+      <topic name="csConnecting">
+        <short>Trying to connect</short>
+      </topic>
+      <topic name="csConnected">
+        <short>Connected to the requested server/client</short>
+      </topic>
+      <topic name="csDisconnecting">
+        <short>Disconnecting from the server/client</short>
+      </topic>
+      <topic name="csDisconnected">
+        <short>Disconnected from the server/client</short>
+      </topic>
+      <topic name="csStateless">
+        <short>Statless socket (for UDP) - No information about the state of the socket</short>
+      </topic>
+      <topic name="csTimeout">
+        <short>Timeout for connection</short>
+      </topic>
+      <topic name="csError">
+        <short>Error that was raised on connection</short>
+      </topic>
+      <topic name="csUnknown">
+        <short>Unknown state for the connection</short>
+      </topic>
     </module>
   </package>
 </fpdoc-descriptions>
