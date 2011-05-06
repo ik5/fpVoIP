@@ -56,7 +56,7 @@ type
 
   { TfpUDPStructure }
 
-  TfpUDPStructure = class(TfpSocketStructure)
+  TfpUDPStructure = class abstract(TfpSocketStructure)
   public
     constructor Create;                                                         virtual abstract;
     destructor Destroy;                                                         override abstract;
@@ -65,7 +65,7 @@ type
 
   end;
 
-  TfpTCPtructure = class(TfpSocketStructure)
+  TfpTCPtructure = class abstract(TfpSocketStructure)
   public
     constructor Create;                                                         virtual abstract;
     destructor Destroy;                                                         override abstract;

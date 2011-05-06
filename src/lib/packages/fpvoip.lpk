@@ -68,6 +68,7 @@
         <Type Value="Text"/>
       </Item3>
     </Files>
+    <LazDoc Paths="../../../documentation/sockets"/>
     <RequiredPkgs Count="1">
       <Item1>
         <PackageName Value="FCL"/>
