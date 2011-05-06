@@ -1,6 +1,7 @@
-src/lib/*backup/*
+src/lib/*/backup/*
 src/lib/*/lib/*
-src/test/lib/*
+src/tests/lib/*
+backup/*
 *.lpi
 *.bak
 *~
