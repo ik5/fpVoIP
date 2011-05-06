@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<fpdoc-descriptions>
+  <package name="fpvoip">
+    <module name="fpsocket_api">
+      <element name="TfpSocketSSL"/>
+      <topic name="TfpSocketSSLStructure">
+        <short>SSL API for fpVoIP</short>
+        <descr>The following class is the API structure of a SSL support for the sockets used in this library.</descr>
+      </topic>
+    </module>
+  </package>
+</fpdoc-descriptions>
