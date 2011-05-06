@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="3">
+    <Name Value="fpvoip"/>
+    <Author Value="Ido Kanner (idok at@at linesip dot.dot com"/>
+    <CompilerOptions>
+      <Version Value="10"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="/home/ik/projects/fpvoip/src/lib/sockets/"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)/"/>
+      </SearchPaths>
+      <CodeGeneration>
+        <SmartLinkUnit Value="True"/>
+        <SmallerCode Value="True"/>
+        <Optimizations>
+          <VariablesInRegisters Value="True"/>
+          <UncertainOptimizations Value="True"/>
+          <OptimizationLevel Value="3"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <UseLineInfoUnit Value="False"/>
+        </Debugging>
+      </Linking>
+      <Other>
+        <CompilerMessages>
+          <UseMsgFile Value="True"/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="Package for fpVoip library for Lazarus installation"/>
+    <License Value="  The contents of this file are subject to the Mozilla Public License
+  Version 1.1 (the &quot;MPL&quot;); you may not use this file except in
+  compliance with the MPL.  You may obtain a copy of the MPL at
+  http://www.mozilla.org/MPL/
+
+  Software distributed under the MPL is distributed on an &quot;AS IS&quot; basis,
+  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the MPL
+  for the specific language governing rights and limitations under the
+  MPL.
+
+  Alternatively, the contents of this file may be used under the
+  terms of the GNU General Public License (the &quot;GPL&quot;), in which case
+  the provisions of the GPL are applicable instead of those above.
+  If you wish to allow use of your version of this file only under the
+  terms of the GPL and not to allow others to use your version of this
+  file under the MPL, indicate your decision by deleting the provisions
+  above and replace them with the notice and other provisions required by
+  the GPL.  If you do not delete the provisions above, a recipient may use
+  your version of this file under either the MPL or the LGPL.
+
+  The Initial Developer of the Original Code is Ido Kanner
+  <idok at@at linesip dot.dot com>         "/>
+    <Version Build="1"/>
+    <Files Count="3">
+      <Item1>
+        <Filename Value="../sockets/fpsocket_api.pas"/>
+        <UnitName Value="fpsocket_api"/>
+      </Item1>
+      <Item2>
+        <Filename Value="../../../README.txt"/>
+        <Type Value="Text"/>
+      </Item2>
+      <Item3>
+        <Filename Value="../../../MPL-1.1.txt"/>
+        <Type Value="Text"/>
+      </Item3>
+    </Files>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Release="1" Valid="True"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
