@@ -7,6 +7,28 @@
         <short>SSL API for fpVoIP</short>
         <descr>The following class is the API structure of a SSL support for the sockets used in this library.</descr>
       </topic>
+      <topic name="TfpSocketStructure">
+        <short>Basic socket structure that other sockets (TCP and UDP) inherit from</short>
+        <descr>TfpSocketStructure is the basic socket structure for both TCP and UDP based connections.
+
+Both TfpUDPStructure and TfpTCPStructure are inheriting this class</descr>
+      </topic>
+      <topic name="fpsocket_api">
+        <short>Socket API unit that is used by fpVoIP in this project</short>
+        <descr>
+          <b>About</b>
+The following unit contain a single API for socket handling for the whole fpVoIP library, so there is only one API to take care of.
+
+The unit does not implement any socket connection,  and for that any socket connection library should be implemented in the "driver" sub directory, based on the socket library, and inheriting from the classes at this unit.</descr>
+      </topic>
+      <topic name="TfpUDPStructure">
+        <short>Basic UDP API for fpVoIP library</short>
+      </topic>
+      <descr>
+        <b>About</b>
+The following unit contain a single API for socket handling for the whole fpVoIP library, so there is only one API to take care of.
+
+The unit does not implement any socket connection,  and for that any socket connection library should be implemented in the "driver" sub directory, based on the socket library, and inheriting from the classes at this unit.</descr>
     </module>
   </package>
 </fpdoc-descriptions>
