@@ -65,9 +65,16 @@ type
 
   end;
 
-implementation
+  TfpTCPtructure = class(TfpSocketStructure)
+  public
+    constructor Create;                                                         virtual abstract;
+    destructor Destroy;                                                         override abstract;
 
-{ TfpUDPStructure }
+  published
+
+  end;
+
+implementation
 
 end.
 
