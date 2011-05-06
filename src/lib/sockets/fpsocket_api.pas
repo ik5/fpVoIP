@@ -39,12 +39,27 @@ uses
 
 type
 
+  { TfpSocketSSLStructure }
+
+  TfpSocketSSLStructure = class abstract
+
+  end;
+
+  { TfpSocketStructure }
+
+  TfpSocketStructure = class abstract
+  public
+
+  published
+
+  end;
+
   { TfpUDPStructure }
 
-  TfpUDPStructure = class abstract
+  TfpUDPStructure = class(TfpSocketStructure)
   public
-    constructor Create(Socket : TObject); virtual abstract;
-    destructor Destroy;                   override abstract;
+    constructor Create;                                                         virtual abstract;
+    destructor Destroy;                                                         override abstract;
 
   published
 

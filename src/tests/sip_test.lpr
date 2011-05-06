@@ -36,7 +36,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, fpvoip;
+  Classes, fpsocket_api;
 
 {$R *.res}
 
