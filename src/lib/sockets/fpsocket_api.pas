@@ -1,5 +1,6 @@
 {
-  Test Program to test only the SIP signalling implementation.
+  Socket API unit. The following implement the required API for socket that is
+  used by fpVoIP library.
 
   The contents of this file are subject to the Mozilla Public License
   Version 1.1 (the "MPL"); you may not use this file except in
@@ -27,19 +28,31 @@
   Copyright (C) 2011 by LINESIP, All rights reserved
 
 }
-
-program sip_test;
+unit fpsocket_api;
 
 {$mode objfpc}{$H+}
 
+interface
+
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
-  Classes, fpvoip;
+  Classes, SysUtils;
 
-{$R *.res}
+type
 
-begin
+  { TfpUDPStructure }
+
+  TfpUDPStructure = class abstract
+  public
+    constructor Create(Socket : TObject); virtual abstract;
+    destructor Destroy;                   override abstract;
+
+  published
+
+  end;
+
+implementation
+
+{ TfpUDPStructure }
+
 end.
 
