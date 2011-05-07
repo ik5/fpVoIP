@@ -78,6 +78,20 @@ The unit does not implement any socket connection,  and for that any socket conn
       <topic name="csUnknown">
         <short>Unknown state for the connection</short>
       </topic>
+      <topic name="TfpSocketStructure.Data">
+        <short>Pointer to the socket data</short>
+      </topic>
+      <topic name="TfpSocketStructure.Create">
+        <short>Basic Create constructor</short>
+        <descr>The constructor will create internal logger, and will use </descr>
+      </topic>
+      <topic name="TfpSocketStructure.Create(aLogger : TEventLog)">
+        <descr>This is the actual constructor of the class.
+It should create everything.
+
+<var>aLogger</var> - A <link id="#FCL">TEventLog</link> logger to store everything that happen. Can be turned off if needed</descr>
+        <short>Basic constructor that inherit the Logger classs</short>
+      </topic>
     </module>
   </package>
 </fpdoc-descriptions>

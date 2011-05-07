@@ -15,7 +15,7 @@ Codecs
 I hope also to create support for codecs such as ITU G7xx, BroadVoice, iLBC,
 AMR, SPEEX, GSM, celt and more.
 
-At the begining I will focus on SIP and G711 in pure Object Pascal.
+At the beginning I will focus on SIP and G711 in pure Object Pascal.
 
 Sockets
 =======
