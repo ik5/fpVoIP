@@ -35,7 +35,7 @@ unit fpsocket_api;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, eventlog;
 
 type
 
@@ -49,7 +49,7 @@ type
 
   TBasicSocketEvent           = procedure(Sender       : TfpSocketStructure)    of object;
   TBasicSocketConnectionEvent = procedure(Sender       : TfpSocketStructure;
-                                          State        : TConnectionState
+                                          State        : TConnectionState)      of object;
   TBasicSocketErrorEvent      = procedure(Sender       : TfpSocketStructure;
                                           ErrorCode    : Integer;
                                           ErrorMessage : String)                of object;
@@ -64,11 +64,14 @@ type
     Data : Pointer;
 
     constructor Create;                                                         virtual abstract;
+    constructor Create(aLogger : TEventLog);                                    virtual abstract;
     destructor  Destroy;                                                        override abstract;
   published
-    property OnConnecting :
-    property OnRead       : TBasicSocketEvent;
-    property OnWrite      : TBasicSocketEvent;
+
+    property OnError       : TBasicSocketErrorEvent;
+    property OnRead        : TBasicSocketEvent;
+    property OnStateChange : TBasicSocketConnectionEvent;
+    property OnWrite       : TBasicSocketEvent;
 
   end;
 
