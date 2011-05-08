@@ -61,12 +61,24 @@ type
   protected
 
   public
-    Data : Pointer;
-
     constructor Create;                                                         virtual abstract;
     constructor Create(aLogger : TEventLog);                                    virtual abstract;
     destructor  Destroy;                                                        override abstract;
+
+    procedure Open;                                                             virtual abstract;
+    procedure Close;                                                            virtual abstract;
+
+    function SendBuffer(const aBuffer; aSize : Integer) : Boolean;              virtual abstract;
+    function SendString(const aBuffer)                  : Boolean;              virtual abstract;
   published
+    property Active  : Boolean;
+    property Body    : TStrings;
+    property Headers : TStrings;
+    property Host    : string;
+    property Port    : word;
+    property UseSSL  : Boolean;
+    property SSL     : TfpSocketSSLStructure;
+
 
     property OnError       : TBasicSocketErrorEvent;
     property OnRead        : TBasicSocketEvent;
@@ -81,9 +93,9 @@ type
 
   end;
 
-  { TfpUDPStructure }
+  { TfpUDPClientStructure }
 
-  TfpUDPStructure = class abstract(TfpSocketStructure)
+  TfpUDPClientStructure = class abstract(TfpSocketStructure)
   public
     constructor Create;                                                         virtual abstract;
     destructor Destroy;                                                         override abstract;
@@ -92,7 +104,9 @@ type
 
   end;
 
-  TfpTCPtructure = class abstract(TfpSocketStructure)
+  { TfpTCPClientStructure }
+
+  TfpTCPClientStructure = class abstract(TfpSocketStructure)
   public
     constructor Create;                                                         virtual abstract;
     destructor Destroy;                                                         override abstract;
