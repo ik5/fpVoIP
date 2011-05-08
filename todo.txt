@@ -22,6 +22,6 @@ Sockets:
   *
 - Create lNET Driver for sockets
   * Create package for lNET driver (using the lNetBase as dependendy)
-  *
+  * Create version for the lNET driver
 - Create Thread safe multi sockets support
 
