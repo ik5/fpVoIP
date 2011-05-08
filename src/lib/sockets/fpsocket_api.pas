@@ -36,7 +36,7 @@ unit fpsocket_api;
 interface
 
 uses
-  Classes, SysUtils, eventlog;
+  Classes, SysUtils, eventlog, Sockets;
 
 const
   SOCKET_VERSION = '0.1';
@@ -63,26 +63,38 @@ type
 
   TfpSocketStructure = class abstract(TObject)
   protected
-
+    procedure SetProtocol;                                                      virtual abstract;
   public
     constructor Create;                                                         virtual abstract;
     constructor Create(aLogger : TEventLog);                                    virtual abstract;
     destructor  Destroy;                                                        override abstract;
 
-    procedure Open;                                                             virtual abstract;
-    procedure Close;                                                            virtual abstract;
+    function Connect : Boolean;                                                 virtual abstract;
+    function Connect(const Address : string; const APort : Word) : Boolean;     virtual abstract;
+    function Listen(const APort : Word;
+                    const AIntf : string = '0.0.0.0')            : Boolean;     virtual abstract;
+    function Accept(const SerSock : TSocket)                     : Boolean;     virtual abstract;
+    procedure Disconnect;                                                       virtual abstract;
 
     function SendBuffer(const aBuffer; aSize : Integer) : Boolean;              virtual abstract;
     function SendString(const aBuffer)                  : Boolean;              virtual abstract;
-  published
-    property Active  : Boolean;
-    property Body    : TStrings;
-    property Headers : TStrings;
-    property Host    : string;
-    property Port    : word;
-    property UseSSL  : Boolean;
-    property SSL     : TfpSocketSSLStructure;
+    function GetBuffer(out aData; const aSize: Integer) : Integer;              virtual abstract;
+    function GetString(out aData : String)              : Integer;              virtual abstract;
 
+    property Protocol : Integer;
+  published
+    property Active        : Boolean;
+    property Body          : TStrings;
+    property Headers       : TStrings;
+    property Host          : String;
+    property LocalAddress  : string;
+    property LocalPort     : Word;
+    property PeerAddress   : string;
+    property PeerPort      : Word;
+    property Port          : Word;
+    property SSL           : TfpSocketSSLStructure;
+    property ToLog         : Boolean;
+    property UseSSL        : Boolean;
 
     property OnError       : TBasicSocketErrorEvent;
     property OnRead        : TBasicSocketEvent;
