@@ -1,0 +1,27 @@
+Todo list
+=========
+
+Map
+---
+- Item
+* sub item
+| comments such as "done", "party done", "implemented at ..." etc...
+
+Sockets:
+--------
+- Create proper version for the socket API | done
+- Create SSL API1
+  *
+- Create Valid Server API for UDP
+  *
+- Create valid Server API for TCP
+  *
+- Create valid Client API for UDP
+  *
+- Create valid Client API for TCP
+  *
+- Create lNET Driver for sockets
+  * Create package for lNET driver (using the lNetBase as dependendy)
+  *
+- Create Thread safe multi sockets support
+
