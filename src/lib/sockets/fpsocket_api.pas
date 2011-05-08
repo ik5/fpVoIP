@@ -28,6 +28,7 @@
   Copyright (C) 2011 by LINESIP, All rights reserved
 
 }
+
 unit fpsocket_api;
 
 {$mode objfpc}{$H+}
@@ -36,6 +37,9 @@ interface
 
 uses
   Classes, SysUtils, eventlog;
+
+const
+  SOCKET_VERSION = '0.1';
 
 type
 
