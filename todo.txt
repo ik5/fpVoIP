@@ -24,4 +24,10 @@ Sockets:
   * Create package for lNET driver (using the lNetBase as dependendy)
   * Create version for the lNET driver
 - Create Thread safe multi sockets support
+- Test both IPv4 and IPv6 support
+
+Documentation:
+--------------
+- Add more documentation
+- Learn fpDocs better
 
