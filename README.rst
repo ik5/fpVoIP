@@ -13,7 +13,7 @@ as GPL instead.
 Codecs
 ======
 I hope also to create support for codecs such as ITU G7xx, BroadVoice, iLBC,
-AMR, SPEEX, GSM, celt and more.
+AMR, SPEEX, GSM, CELT, Opus and more.
 
 At the beginning I will focus on SIP and G711 in pure Object Pascal.
 
