@@ -3,6 +3,7 @@ src/lib/*/lib/*
 src/tests/lib/*
 src/tests/*_test
 backup/*
+reference/SIP_IMS_Specifications_For_Dummies.pdf
 *.lpi
 *.bak
 *~
