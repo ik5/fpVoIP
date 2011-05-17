@@ -9,17 +9,8 @@ Map
 
 Sockets:
 --------
-- Create proper version for the socket API | done
-- Create SSL API1
-  *
-- Create Valid Server API for UDP
-  *
-- Create valid Server API for TCP
-  *
-- Create valid Client API for UDP
-  *
-- Create valid Client API for TCP
-  *
+- Create higher level API for socket handling
+  * Change API according to the SIP, RTP and SDP requirements
 - Create lNET Driver for sockets
   * Create package for lNET driver (using the lNetBase as dependendy)
   * Create version for the lNET driver
@@ -31,3 +22,6 @@ Documentation:
 - Add more documentation
 - Learn fpDocs better
 
+Tests:
+------
+Add more tests
