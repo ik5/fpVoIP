@@ -1,5 +1,5 @@
 {
-  Basic SIP Implementation
+  SIP and SIPS URI Parser
 
   The contents of this file are subject to the Mozilla Public License
   Version 1.1 (the "MPL"); you may not use this file except in
@@ -26,41 +26,19 @@
 
   Copyright (C) 2011 by LINESIP, All rights reserved
 
-  NOTES:
-   * SIP can work on it's own, and will use other protocols only to expand
-     itself.
-
 }
-unit fpSIP;
+unit fpSipUriParser;
 
 {$mode objfpc}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, fpsocket_api, fpSipUriParser;
+  Classes, SysUtils;
 
 {
-  SIP supports five facets of establishing and terminating multimedia
-   communications:
 
-      User location: determination of the end system to be used for
-           communication;
-
-      User availability: determination of the willingness of the called
-           party to engage in communications;
-
-      User capabilities: determination of the media and media parameters
-           to be used;
-
-      Session setup: "ringing", establishment of session parameters at
-           both called and calling party;
-
-      Session management: including transfer and termination of
-           sessions, modifying session parameters, and invoking
-           services.
 }
-
 
 implementation
 

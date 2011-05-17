@@ -36,7 +36,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, fpsocket_api, lnetbase;
+  Classes, fpsocket_api, lnetbase, fpSIP;
 
 {$R *.res}
 
