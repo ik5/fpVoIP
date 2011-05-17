@@ -35,6 +35,7 @@ Version 0.2
 * Create basic support for SDP (rfc4566)
 * Create basic support for RTP (rfc3550, rfc3551, rfc5391, rfc6222)
 * Create basic support for G711 (ulaw, alaw)
+* Implement support for RTSP (rfc2326)
 
 ============
 Version 0.3
