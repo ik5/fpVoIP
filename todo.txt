@@ -17,6 +17,12 @@ Sockets:
 - Create Thread safe multi sockets support
 - Test both IPv4 and IPv6 support
 
+SIP Implementation:
+-------------------
+- Work on rfc3261
+- Test
+- Document
+
 Documentation:
 --------------
 - Add more documentation
