@@ -54,7 +54,7 @@
   The Initial Developer of the Original Code is Ido Kanner
   <idok at@at linesip dot.dot com>         "/>
     <Version Build="1"/>
-    <Files Count="8">
+    <Files Count="9">
       <Item1>
         <Filename Value="../sockets/fpsocket_api.pas"/>
         <HasRegisterProc Value="True"/>
@@ -88,6 +88,10 @@
         <Filename Value="../sip/fpsipuriparser.pas"/>
         <UnitName Value="fpSipUriParser"/>
       </Item8>
+      <Item9>
+        <Filename Value="../sip/fpsiptypes.pas"/>
+        <UnitName Value="fpsiptypes"/>
+      </Item9>
     </Files>
     <LazDoc Paths="../../../documentation/sockets"/>
     <RequiredPkgs Count="1">
