@@ -33,27 +33,46 @@ unit fpGeneralConsts;
 
 interface
 
+{
+  RFC 2234 core
+  ALSO from other RFC's that require this settings.
+  We only decleare the valid set of chars here, not rules
+}
 const
-  const
-  UALPHA   = ['A'..'Z'];
-  LALPHA   = ['a'..'z'];
-  ALPHA    = UALPHA + LALPHA;
-  DIGIT    = ['0'..'9'];
-  ALPHANUM = ALPHA + DIGIT;
-  LF       = #10;
-  CR       = #13;
-  CRLF     = CR + LF;
-  BIT      = ['0'..'1'];
-  _CHAR    = [#1..#127];
-  CTL      = [#0..#31, #127];
-  DQUOTE   = #34;
-  HEXDIG   = ['0'..'9', 'A'..'F', 'a'..'f'];
-  HTAB     = #9;
-  SP       = #32;
-  WSP      = [SP, HTAB];
-  LWSP     = WSP + [CR,LF]; // LWSP =  *(WSP / CRLF WSP) <- ABNF defeniton
-  OCTET    = [#0..#255];
-  VCHAR    = [#33..#126];
+  UALPHA      = ['A'..'Z'];
+  LALPHA      = ['a'..'z'];
+  ALPHA       = UALPHA + LALPHA;
+  DIGIT       = ['0'..'9'];
+  ALPHANUM    = ALPHA + DIGIT;
+  LF          = #10;
+  CR          = #13;
+  CRLF        = [CR, LF];
+  BIT         = ['0'..'1'];
+  _CHAR       = [#1..#127];
+  CTL         = [#0..#31, #127];
+  DQUOTE      = #34;
+  QUOTE       = #39;
+  HEXDIG      = ['0'..'9', 'A'..'F', 'a'..'f'];
+  HTAB        = #9;
+  SP          = #32;
+  WSP         = [SP, HTAB];
+// LWSP =  *(WSP / CRLF WSP) <- ABNF defeniton
+  LWSP        = WSP + CRLF;
+  OCTET       = [#0..#255];
+  VCHAR       = [#33..#126];
+
+// Generic URI (rfc 3986/2396) Chars and charsets
+
+  GEN_DELIMS  = [':', '/', '?', '#',   '[', ']', '@' ];
+  SUB_DELIMS  = ['!', '$', '&', QUOTE, '(', ')', '*',
+                 '+', ',', ';', '='];
+  RESERVED    = GEN_DELIMS + SUB_DELIMS;
+  UNRESERVED  = ALPHA + DIGIT + ['-', '.', '_', '~'];
+  PCT_ENCODED = ['%'] + HEXDIG;
+  ESCAPED     = PCT_ENCODED;
+  URIC        = RESERVED + UNRESERVED + ESCAPED;
+  MARK        = ['-', '_', '.', '!', '~', '*', QUOTE, '(', ')'];
+
 
 implementation
 
