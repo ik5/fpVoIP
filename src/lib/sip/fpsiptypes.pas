@@ -37,7 +37,7 @@ type
   TSIPType = (spSIP, spSIPS);
   TSipTyps = set of TSIPType;
 
-  TSIPParams = record
+  TSIPParam = record
     Name  : String;
     Value : String;
   end;
@@ -48,12 +48,20 @@ type
     Password  : String;
     Domain    : String;
     Port      : Word;
-    Params    : array of TSipParams; //name=value;name=value
-    Headers   : array of TSipParams; //?name=value&name=value <- like normal URI
+    Params    : array of TSIPParam; //name=value;name=value
+    Headers   : array of TSIPParam; //?name=value&name=value <- like normal URI
   end;
 
+operator = (SIPParam_A, SIPParam_B : TSIPParam) : Boolean;
 
 implementation
+uses fpSipUriParser, Classes, SysUtils;
+
+operator = ( SIPParam_A, SIPParam_B : TSIPParam ) : Boolean;
+begin
+  Result := (UpperCase(SIPParam_A.Name)  = UpperCase(SIPParam_B.Name))   and
+            (UpperCase(SIPParam_A.Value) = UpperCase(SIPParam_B.Value));
+end;
 
 end.
 

@@ -7,7 +7,7 @@ unit fpvoip;
 interface
 
 uses
-  fpsocket_api, fpSIP, fpSipUriParser;
+  fpsocket_api, fpSIP, fpSipUriParser, fpSIPTypes, fpGeneralConsts;
 
 implementation
 

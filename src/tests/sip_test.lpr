@@ -36,10 +36,11 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, fpsocket_api, lnetbase, fpSIP;
+  Classes, fpsocket_api, lnetbase, fpSIP, uri_tests;
 
 {$R *.res}
 
 begin
+  test_uris;
 end.
 

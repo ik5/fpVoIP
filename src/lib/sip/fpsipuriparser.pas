@@ -34,7 +34,7 @@ unit fpSipUriParser;
 interface
 
 uses
-  Classes, SysUtils, fpSIPTypes;
+  Classes, SysUtils, fpSIPTypes, fpGeneralConsts;
 
 {
   Require to Parse the following structure:
@@ -87,9 +87,24 @@ uses
    sip:bob@192.0.2.4                 phone21.boxesbybob.com resolves to)
 }
 
+function ParseSIPURI(const aURI : String) : TSIPURI;
+
+function SameSIPURI(const URI_A, URI_B : TSIPURI) : Boolean;
+
 
 
 implementation
+
+function ParseSIPURI ( const aURI : String ) : TSIPURI;
+begin
+
+end;
+
+function SameSIPURI ( const URI_A, URI_B : TSIPURI ) : Boolean;
+begin
+ //Result := URI_A = URI_B;
+end;
+
 
 end.
 

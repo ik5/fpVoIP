@@ -3,6 +3,7 @@
   <Package Version="3">
     <Name Value="fpvoip"/>
     <Author Value="Ido Kanner (idok at@at linesip dot.dot com"/>
+    <AutoUpdate Value="OnRebuildingAll"/>
     <CompilerOptions>
       <Version Value="10"/>
       <SearchPaths>
@@ -54,7 +55,7 @@
   The Initial Developer of the Original Code is Ido Kanner
   <idok at@at linesip dot.dot com>         "/>
     <Version Build="1"/>
-    <Files Count="9">
+    <Files Count="10">
       <Item1>
         <Filename Value="../sockets/fpsocket_api.pas"/>
         <HasRegisterProc Value="True"/>
@@ -74,7 +75,7 @@
       </Item4>
       <Item5>
         <Filename Value="../sip/fpsip.pas"/>
-        <UnitName Value="fpsip"/>
+        <UnitName Value="fpSIP"/>
       </Item5>
       <Item6>
         <Filename Value="../../../README.rst"/>
@@ -90,10 +91,14 @@
       </Item8>
       <Item9>
         <Filename Value="../sip/fpsiptypes.pas"/>
-        <UnitName Value="fpsiptypes"/>
+        <UnitName Value="fpSIPTypes"/>
       </Item9>
+      <Item10>
+        <Filename Value="../general/fpgeneralconsts.pas"/>
+        <UnitName Value="fpGeneralConsts"/>
+      </Item10>
     </Files>
-    <LazDoc Paths="../../../documentation/sockets"/>
+    <LazDoc Paths="../../../documentation"/>
     <RequiredPkgs Count="1">
       <Item1>
         <PackageName Value="FCL"/>
