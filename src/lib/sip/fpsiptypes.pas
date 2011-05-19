@@ -37,6 +37,21 @@ type
   TSIPType = (spSIP, spSIPS);
   TSipTyps = set of TSIPType;
 
+  TSIPParams = record
+    Name  : String;
+    Value : String;
+  end;
+
+  TSIPURI = record
+    ProtoType : TSipType;
+    User      : String;
+    Password  : String;
+    Domain    : String;
+    Port      : Word;
+    Params    : array of TSipParams; //name=value;name=value
+    Headers   : array of TSipParams; //?name=value&name=value <- like normal URI
+  end;
+
 
 implementation
 
