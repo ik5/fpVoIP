@@ -23,6 +23,12 @@ SIP Implementation:
 - Test
 - Document
 
+SIP URI:
+--------
+- Create the Parser
+- Create a way to sort Headers and Params
+- Create operators to find if TSIPURI equals to another TSIPURI
+
 Documentation:
 --------------
 - Add more documentation
