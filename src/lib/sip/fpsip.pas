@@ -38,7 +38,7 @@ unit fpSIP;
 interface
 
 uses
-  Classes, SysUtils, fpsocket_api, fpSipUriParser, fpSIPTypes;
+  Classes, SysUtils, fpsocket_api, fpSIPURI, fpSIPTypes;
 
 {
   SIP supports five facets of establishing and terminating multimedia

@@ -34,7 +34,7 @@ unit uri_tests;
 interface
 
 uses
-  fpSIPTypes, fpSipUriParser;
+  fpSIPTypes, fpSIPURI;
 
 procedure test_uris;
 

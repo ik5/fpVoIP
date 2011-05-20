@@ -32,6 +32,7 @@ unit fpSIPTypes;
 {$mode objfpc}{$H+}
 
 interface
+uses fpGeneralConsts;
 
 type
   TSIPType = (spSIP, spSIPS);
@@ -50,12 +51,23 @@ type
     Port      : Word;
     Params    : array of TSIPParam; //name=value;name=value
     Headers   : array of TSIPParam; //?name=value&name=value <- like normal URI
+    Fregment  : String;             //#Bookmark like in uri
   end;
+
+{
+  Overriding some fpGeneralConstants stuff here !
+  Also adding additional sets as well.
+}
+const
+  MARK        =  ['-', '_', '.', '!', '~', '*', QUOTE, '(', ')'];
+  RESERVED    =  [';', '/', '?', ':', '@', '&', '=', '+',
+                  '$', ','];
+  UNRESERVED  =  ALPHANUM + MARK;
 
 operator = (SIPParam_A, SIPParam_B : TSIPParam) : Boolean;
 
 implementation
-uses fpSipUriParser, Classes, SysUtils;
+//uses Classes, SysUtils;
 
 operator = ( SIPParam_A, SIPParam_B : TSIPParam ) : Boolean;
 begin

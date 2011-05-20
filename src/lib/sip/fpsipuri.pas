@@ -27,7 +27,7 @@
   Copyright (C) 2011 by LINESIP, All rights reserved
 
 }
-unit fpSipUriParser;
+unit fpSIPURI;
 
 {$mode objfpc}{$H+}
 

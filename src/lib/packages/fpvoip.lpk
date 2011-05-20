@@ -7,7 +7,7 @@
     <CompilerOptions>
       <Version Value="10"/>
       <SearchPaths>
-        <OtherUnitFiles Value="/home/ik/projects/fpvoip/src/lib/sockets/;/home/ik/projects/fpvoip/src/lib/sip/"/>
+        <OtherUnitFiles Value="../sockets;../sip;../general"/>
         <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <CodeGeneration>
@@ -87,14 +87,17 @@
       </Item7>
       <Item8>
         <Filename Value="../sip/fpsipuriparser.pas"/>
+        <HasRegisterProc Value="True"/>
         <UnitName Value="fpSipUriParser"/>
       </Item8>
       <Item9>
         <Filename Value="../sip/fpsiptypes.pas"/>
+        <HasRegisterProc Value="True"/>
         <UnitName Value="fpSIPTypes"/>
       </Item9>
       <Item10>
         <Filename Value="../general/fpgeneralconsts.pas"/>
+        <HasRegisterProc Value="True"/>
         <UnitName Value="fpGeneralConsts"/>
       </Item10>
     </Files>
