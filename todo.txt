@@ -34,6 +34,11 @@ Documentation:
 - Add more documentation
 - Learn fpDocs better
 
+General:
+--------
+- Create fpPkg support        | Should be made prior to v0.1 release
+- Create Makefile.fpc support | Should be made prior to v0.1 release
+
 Tests:
 ------
 Add more tests
