@@ -3,9 +3,9 @@ Todo list
 
 Map
 ---
-- - Item
-- * sub item
-- | comments such as: "done", "partly done", "implemented at ..." etc...
+- "-" Item
+- "*" sub item
+- "|" comments such as: "done", "partly done", "implemented at ..." etc...
 
 Sockets:
 --------
