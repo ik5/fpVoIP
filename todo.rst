@@ -3,17 +3,21 @@ Todo list
 
 Map
 ---
-- Item
-* sub item
-| comments such as: "done", "partly done", "implemented at ..." etc...
+- - Item
+- * sub item
+- | comments such as: "done", "partly done", "implemented at ..." etc...
 
 Sockets:
 --------
 - Create higher level API for socket handling
+
   * Change API according to the SIP, RTP and SDP requirements
+
 - Create lNET Driver for sockets
+
   * Create package for lNET driver (using the lNetBase as dependendy)
   * Create version for the lNET driver
+
 - Create Thread safe multi sockets support
 - Test both IPv4 and IPv6 support
 
@@ -41,4 +45,4 @@ General:
 
 Tests:
 ------
-- Add more tests
+Add more tests
