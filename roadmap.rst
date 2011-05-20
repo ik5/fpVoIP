@@ -32,7 +32,7 @@ Version 0.1
 ============
 Version 0.2
 ============
-* Create basic support for SDP (rfc4566)
+* Create basic support for SDP (rfc4566, rfc3264)
 * Create basic support for RTP (rfc3550, rfc3551, rfc5391, rfc6222)
 * Create basic support for G711 (ulaw, alaw)
 * Implement support for RTSP (rfc2326)
@@ -57,12 +57,22 @@ Version 0.4
 ============
 Version 0.5
 ============
+* Finish core support for SIP:
+
+  - Add support for Reliability of Provisional Responses (rfc3262)
+  - Add support for Locating SIP Servers (rfc3263)
+  - Add support for SIP-Specific Event Notification (rfc3265)
+
+============
+Version 0.6
+============
 * Make sure that SIP works both as client and as server
 * Make stress tests and try to make the library work with at least 10,000 requests per second
 * Make tests that make sure that the server can work with at least 100,000 active SIP connections overall
 
 ============
-Version 0.6
+Version 0.7
 ============
 * Create support for IAX2 (rfc5456)
+
 
