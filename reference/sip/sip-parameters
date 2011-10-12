@@ -1,7 +1,7 @@
 
 Session Initiation Protocol (SIP) Parameters 
 
-(last updated 2011-05-09)
+(last updated 2011-09-16)
 
 Registries included below:
 - Header Fields
@@ -23,6 +23,7 @@ Registries included below:
 - Service-ID/Application-ID Labels
 - Info Packages Registry
 - SIP Configuration Profile Types
+- Geolocation-Error Codes
 
 
 Registry Name: Header Fields
@@ -79,6 +80,9 @@ Registry:
   Expires                       [RFC3261]
   Flow-Timer                    [RFC5626]
   From                 f        [RFC3261]
+  Geolocation                   [RFC-ietf-sipcore-location-conveyance-09.txt]
+  Geolocation-Error             [RFC-ietf-sipcore-location-conveyance-09.txt]
+  Geolocation-Routing           [RFC-ietf-sipcore-location-conveyance-09.txt]
   Hide                          [RFC3261] (deprecated)
   History-Info                  [RFC4244]
   Identity             y        [RFC4474] 
@@ -232,6 +236,26 @@ eventlist       Extension to allow subscriptions to lists    [RFC4662]
 from-change     This option tag is used to indicate that     [RFC4916]
                 a UA supports changes to URIs in From and 
                 To header fields during a dialog.
+
+geolocation-http The "geolocation-http" option tag signals   [RFC-ietf-sipcore-location-conveyance-09.txt]
+                 support for acquiring location information
+                 via an HTTP ([RFC2616]). A location
+                 recipient who supports this option can
+                 request location with an HTTP GET and
+                 parse a resulting 200 response containing
+                 a PIDF-LO object. The URI schemes
+                 supported by this option include "http"
+                 and "https".
+
+geolocation-sip The "geolocation-sip" option tag signals     [RFC-ietf-sipcore-location-conveyance-09.txt]
+                support for acquiring location information
+                via the presence event package of SIP
+                (RFC 3856). A location recipient who
+                supports this option can send a SUBSCRIBE
+                request and parse a resulting NOTIFY
+                containing a PIDF-LO object. The URI
+                schemes supported by this option include
+                "sip", "sips" and "pres".
 
 gin             This option tag is used to identify the      [RFC6140]
                 extension that provides Registration for 
@@ -527,6 +551,7 @@ Registry:
     421 Extension Required
     422 Session Interval Too Small            [RFC4028]
     423 Interval Too Brief
+    424 Bad Location Information              [RFC-ietf-sipcore-location-conveyance-09.txt]
     428 Use Identity Header                   [RFC4474]
     429 Provide Referrer Identity             [RFC3892]
     430 Flow Failed                           [RFC5626]
@@ -708,6 +733,7 @@ Event                         to-tag                       No          [RFC4235]
 Event                         vendor                       No          [RFC6080]
 Event                         version                      No          [RFC6080]
 From                          tag                          No          [RFC3261]
+Geolocation-Error             code                         Yes         [RFC-ietf-sipcore-location-conveyance-09.txt]
 P-Access-Network-Info         cgi-3gpp                     No          [RFC3455]
 P-Access-Network-Info         utran-cell-id-3gpp           No          [RFC3455]
 P-Charging-Function-Addresses ccf                          No          [RFC3455]
@@ -833,7 +859,7 @@ web-page         The URI can be used to access a  web page   [RFC4575]
 
 Registry Name: Resource-Priority Namespaces
 Reference: [RFC4412]
-Registration Procedures: RFC publication
+Registration Procedures: Standards Action
 
 Registry:
                          
@@ -902,7 +928,7 @@ Reference      = IETF document reference for this namespace
 
 Registry Name: Resource-Priority Priority-values 
 Reference: [RFC4412]
-Registration Procedures: RFC publication
+Registration Procedures: Standards Action
 
 Registry:
 Namespace: drsn
@@ -1703,6 +1729,19 @@ device                            [RFC6080]
 user                              [RFC6080]
 
 
+Registry Name: Geolocation-Error Codes
+Reference: [RFC-ietf-sipcore-location-conveyance-09.txt]
+Registration Procedures: Specification Required
+
+Registry:
+Code  Default Reason Phrase                                             Reference
+----  ----------------------------------------------------------------  ---------
+100   "Cannot Process Location"                                         [RFC-ietf-sipcore-location-conveyance-09.txt]
+200   "Permission to Use Location Information"                          [RFC-ietf-sipcore-location-conveyance-09.txt]
+201   "Permission to Retransmit Location Information to a Third Party"  [RFC-ietf-sipcore-location-conveyance-09.txt]
+202   "Permission to Route Based on Location Information"               [RFC-ietf-sipcore-location-conveyance-09.txt]
+300   "Deference Failure"                                               [RFC-ietf-sipcore-location-conveyance-09.txt]
+
 References
 ----------
 [RFC3204]  E. Zimmerer, J. Peterson, A. Vemuri, L. Ong, F. Audet, M. Watson,
@@ -1995,6 +2034,10 @@ References
 
 [RFC6228]  C. Holmberg, "Session Initiation Protocol (SIP) Response Code for Indication of 
            Terminated Dialog", RFC 6228, May 2011.
+
+[RFC-ietf-sipcore-location-conveyance-09.txt]
+           J. Polk, B. Rosen, J. Peterson, "Location Conveyance for the Session Initiation 
+           Protocol", RFC XXXX, Month Year.
 
 (registry created 2002)
 
