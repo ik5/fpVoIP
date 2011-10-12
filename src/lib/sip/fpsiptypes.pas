@@ -74,7 +74,7 @@ const
 operator = (SIPParam_A, SIPParam_B : TSIPParam) : Boolean;
 
 implementation
-uses {Classes,} SysUtils;
+//uses {Classes,} SysUtils;
 
 operator = ( SIPParam_A, SIPParam_B : TSIPParam ) : Boolean;
 begin
