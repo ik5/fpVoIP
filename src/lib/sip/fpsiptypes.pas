@@ -32,7 +32,14 @@ unit fpSIPTypes;
 {$mode objfpc}{$H+}
 
 interface
-uses fpGeneralConsts;
+uses SysUtils, fpGeneralConsts;
+
+type
+  ESIPException         = class(Exception);
+
+  ESIPURIError          = class(ESIPException);
+  ESIPURIParserError    = class(ESIPURIError);
+  ESIPURIGeneratorError = class(ESIPURIError);
 
 type
   TSIPType = (spSIP, spSIPS);
