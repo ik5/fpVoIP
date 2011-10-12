@@ -15,3 +15,5 @@ tmp/
 *.o
 *.ico
 *.res
+*.dbg
+project1
