@@ -1,5 +1,6 @@
 src/*/backup/*
-src/lib/sip/lib/*
+src/lib/*/lib/*
+src/lib/*/backup/*
 src/tests/lib/*
 src/tests/backup/*
 src/tests/*_test
