@@ -1,6 +1,7 @@
-src/lib/*/backup/*
-src/lib/*/lib/*
+src/*/backup/*
+src/lib/sip/lib/*
 src/tests/lib/*
+src/tests/backup/*
 src/tests/*_test
 backup/*
 reference/sip/SIP_IMS_Specifications_For_Dummies.pdf
