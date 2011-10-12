@@ -45,7 +45,7 @@ type
   protected
 
   public
-    constructor Create(URI : String); virtual;
+    constructor Create(aURI : String); virtual;
   published
     property HasProtocol : Boolean read FHasHeader write FHasHeader;
   end;
@@ -64,7 +64,7 @@ begin
 end;
 
 begin
-  SIPURIParser := TSIPURIParser.Create;
+  SIPURIParser := TSIPURIParser.Create('');
 
   FreeAndNil(SIPURIParser);
 end.
