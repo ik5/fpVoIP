@@ -74,5 +74,10 @@ Version 0.6
 Version 0.7
 ============
 * Create support for IAX2 (rfc5456)
+* Create support for XMPP (rfc6120, rfc6121, and rfc6122)
 
+============
+Version 0.8
+============
+* Create support for MRCPv1 (rfc4463)
 
