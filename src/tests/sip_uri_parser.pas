@@ -70,6 +70,7 @@ begin
    ausNotAdded    : ;
   end;
 
+  FHasHeader   := False;
 end;
 
 function TSIPURIParser.AddURI(aURI: String) : TAddURIStatus;
@@ -85,7 +86,7 @@ begin
   FURI         := aURI;
   FProtocol    := '';
   FSIPProtocol := spSIP;
-  FHasHeader   := False;
+
 end;
 
 begin
