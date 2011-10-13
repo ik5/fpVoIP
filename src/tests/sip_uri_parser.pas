@@ -29,7 +29,7 @@
  }
 {$mode objfpc}{$H+} {$IFDEF WINDOWS} {$APPTYPE CONSOLE} {$ENDIF}
 program sip_uri_parser;
-uses SysUtils,fpSIPTypes, fpGeneralConsts;
+uses SysUtils,fpSIPTypes, fpGeneralConsts, fpSIPURI;
 
 type
 
@@ -57,6 +57,9 @@ constructor TSIPURIParser.Create(aURI : String);
 begin
   FillChar(FSIPURI, SizeOf(TSIPURI), 0);
   writeln('Given URI : ', aURI);
+  if Trim(aURI) = '' then
+    raise ESIPURIParserError.Create(errEmptyURI);
+
   FURI         := aURI;
   FProtocol    := '';
   FSIPProtocol := spSIP;

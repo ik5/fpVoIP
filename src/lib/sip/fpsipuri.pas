@@ -36,6 +36,9 @@ interface
 uses
   Classes, SysUtils, fpSIPTypes, fpGeneralConsts;
 
+resourcestring
+  errEmptyURI = 'The given URI is empty.';
+
 {
   Require to Parse the following structure:
     sip:user:password@host:port;uri-parameters?headers
