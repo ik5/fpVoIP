@@ -67,7 +67,7 @@ begin
 end;
 
 begin
-  SIPURIParser := TSIPURIParser.Create('');
+  SIPURIParser := TSIPURIParser.Create('sips:alice@atlanta.com?subject=project%20x&priority=urgent');
 
   FreeAndNil(SIPURIParser);
 end.
