@@ -29,7 +29,7 @@
  }
 {$mode objfpc}{$H+} {$IFDEF WINDOWS} {$APPTYPE CONSOLE} {$ENDIF}
 program sip_uri_parser;
-uses SysUtils,fpSIPTypes, fpGeneralConsts, fpSIPURI;
+uses SysUtils, fpSIPTypes, fpGeneralConsts, fpSIPURI;
 
 type
 
