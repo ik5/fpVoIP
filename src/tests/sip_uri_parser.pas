@@ -33,6 +33,8 @@ uses SysUtils, fpSIPTypes, fpGeneralConsts, fpSIPURI;
 
 type
 
+  TAddURIStatus = (ausAdded, ausEmptyURI, ausUnkownError, ausNotAdded);
+
   { TSIPURIParser }
 
   TSIPURIParser = class
@@ -46,6 +48,8 @@ type
 
   public
     constructor Create(aURI : String); virtual;
+
+    function AddURI(aURI : String) : TAddURIStatus; virtual;
   published
     property HasProtocol : Boolean read FHasHeader write FHasHeader;
   end;
@@ -54,12 +58,30 @@ var
   SIPURIParser : TSIPURIParser;
 
 constructor TSIPURIParser.Create(aURI : String);
+var
+  AddURIAnswer : TAddURIStatus;
 begin
+  AddURIAnswer := AddURI(aURI);
+
+  case AddURIAnswer of
+   ausAdded       : ;
+   ausEmptyURI    : raise ESIPURIParserError.Create(errEmptyURI);
+   ausUnkownError : ;
+   ausNotAdded    : ;
+  end;
+
+end;
+
+function TSIPURIParser.AddURI(aURI: String) : TAddURIStatus;
+begin
+  if Trim(aURI) = '' then
+    begin
+      writeln('Given URI is empty.');
+      Exit(ausEmptyURI);
+    end;
+
   FillChar(FSIPURI, SizeOf(TSIPURI), 0);
   writeln('Given URI : ', aURI);
-  if Trim(aURI) = '' then
-    raise ESIPURIParserError.Create(errEmptyURI);
-
   FURI         := aURI;
   FProtocol    := '';
   FSIPProtocol := spSIP;
