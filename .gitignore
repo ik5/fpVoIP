@@ -16,4 +16,5 @@ tmp/
 *.ico
 *.res
 *.dbg
+gmon.out
 project1
